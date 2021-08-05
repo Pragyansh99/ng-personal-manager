@@ -1,0 +1,68 @@
+.tabs {
+  backdrop-filter: blur(3px);
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  background-color: rgba(white, 0.25);
+  border-radius: 12px;
+  gap: 14px;
+  margin: 12px;
+  margin-top: 50px;
+}
+
+.tab {
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  // &:not(:last-child) {
+  //   margin-right: 14px;
+  // }
+}
+
+.tab-tile {
+  padding: 18px;
+  cursor: pointer;
+  display: flex;
+  i {
+    color: #222;
+  }
+
+}
+
+// Background tile shape
+
+.tab-tile::before  {
+  content: '';
+  position: absolute;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  // background-color: rgba(red,0.3);
+  opacity: 0.85;
+  transition: all 0.3s;
+}
+
+.bookmark-tab .tab-tile::before  {
+  background: linear-gradient(45deg, #f8b5a5, #e2d2fd);
+}
+
+.todo-tab .tab-tile::before  {
+  background: linear-gradient(45deg, #a2ffff, #ffbdde);
+}
+
+.notes-tab .tab-tile::before  {
+  background: linear-gradient(45deg, #d2cdff, #5fffbc);
+}
+
+.tab-tile:hover::before {
+  opacity: 1;
+  transform: scale(1.1);
+
+}
+
+.tab.selectedLink  .tab-tile::before {
+  border-radius: 50%;
+}
