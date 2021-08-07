@@ -11,7 +11,6 @@
 }
 
 .top_section {
-  // background-color: aquamarine;
   text-align: center;
   padding: 40px 0px;
   h1 {
@@ -28,12 +27,11 @@
 }
 
 .content_section {
-  // background-color: cadetblue;
   flex-grow: 1;
+  min-height: 0px;
 }
 
 .bottom_section {
-  // background-color: coral;
   display: flex;
 
   app-tabs {

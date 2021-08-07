@@ -31,7 +31,8 @@
 }
 
 .tab.selectedLink .tab-tile {
-  transform: translateY(-28px);
+  // transform: translateY(-28px);
+  transform: translateY(-50%);
   transition-duration: 0.4s;
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -79,3 +80,33 @@
   border-radius: 50%;
 }
 
+
+
+// Style for underline effect below the tab section
+
+.tab::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 50%;
+  background-color: rgba(white, 0.85);
+  bottom: -7px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 2px;
+  transition: all 0.2s;
+  // hide by default
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.selectedLink.tab::after {
+  opacity: 0.85;
+  transform: scaleX(1);
+  transition-delay: 0.2s;
+}
+
+.tab.tab.selectedLink {
+  outline: none;
+}

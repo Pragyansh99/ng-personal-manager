@@ -5,13 +5,14 @@ import { NotesComponent } from './notes/notes.component';
 import { TodosComponent } from './todos/todos.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'bookmarks', pathMatch: 'full' },
   { path: 'bookmarks', component: BookmarksComponent },
   { path: 'todos', component: TodosComponent },
-  { path: 'notes', component: NotesComponent }
+  { path: 'notes', component: NotesComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
